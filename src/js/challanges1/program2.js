@@ -15,12 +15,25 @@ function addUpTo(n) {
         total += i;
     }
     return total
-} 
-console.log("Total number is: " + addUpTo(5));
+}
+// console.log("Total number is: " + addUpTo(5));
+// Approach 1
+/*Whie not use timmer */
+let tt1 = performance.now();
+addUpTo(1000000000)
+let tt2 = performance.now();
+console.log(`Time Elapsed Approach 1 ${(tt2 - tt1) / 1000} seconds.`)
 
 // Approach 2
 function addUpTo2(n) {
     return n * (n + 1) / 2;
 }
-console.log("Total number is: " + addUpTo2(265));
+// console.log("Total number is: " + addUpTo2(265));
 
+
+/*Whie not use timmer */
+// Approach 2
+let t1 = performance.now();
+addUpTo2(1000000000)
+let t2 = performance.now();
+console.log(`Time Elapsed Approach 2 ${(t2 - t1) / 1000} seconds.`)
