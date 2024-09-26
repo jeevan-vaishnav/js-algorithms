@@ -8,7 +8,6 @@ const sumRange = (value) => {
 
     const result = value + sumRange(value - 1);
     console.log(`Returning ${result} for sumRange(${value})`);
-    
     return result;
 }
 
