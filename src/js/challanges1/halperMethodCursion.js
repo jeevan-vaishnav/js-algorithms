@@ -9,7 +9,6 @@ function checkOddValues(arr) {
         if (helperInput[0] % 2 === 0) {
             result.push(helperInput[0])
         }
-
         inputHandler(helperInput.slice(1))
     }
 
