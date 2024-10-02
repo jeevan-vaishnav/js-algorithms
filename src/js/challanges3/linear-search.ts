@@ -7,8 +7,7 @@ console.log('Linear Search');
  * - If the value is never found , return -1
  * 
  */
-
-const linearSearch = (arr, val) => {
+const linearSearch = (arr:any, val:any) => {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] === val) return i
     }
