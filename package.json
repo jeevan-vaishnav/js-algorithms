@@ -4,7 +4,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "js": "nodemon src/js/geeksforgeeks.org/js.js",
-    "js-array-string": "nodemon src/js/geeksforgeeks.org/js-array-string.js"
+    "js-array-string": "nodemon src/js/geeksforgeeks.org/js-array-string.js",
+    "js-basic-problems": "nodemon src/js/geeksforgeeks.org/js-basic-problems.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
