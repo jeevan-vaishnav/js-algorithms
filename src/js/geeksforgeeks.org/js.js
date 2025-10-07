@@ -524,3 +524,219 @@ console.log(objj.address?.phone)
  * ?. safely access a property or method 
  * Returns undefined if the property doesn't exits
  */
+
+
+/**
+ * Controll Statement In JS 
+ * JS controll statement is used to control the execution of 
+ * a program based on a specific condition. if the condition meets then a
+ * particular block of action will be executed otherwie it will executed another
+ * block of action that satisfies that particular condition 
+ * 
+ */
+
+
+/**
+ * Type of control statements in js
+ * Conditional Statement: these statements are used for decision making , a decision
+ * n i made by the conditional statement based on an expersion that is passed. Either Yes or NO
+ * 
+ * Iterative Statement: This is a statement that iterates repeatedely untill a condition is met. 
+ * Simply said, if we have an expression, the statement will keep repeating itself until and unless it is satisfied.
+ */
+
+/**
+ * Approch 1 : If Statement
+ * in thie approch, we are using an if statement to checka specific condition, the code block gets
+ * executed when the given condition is satisfied
+ */
+
+
+/**
+ * Syntax
+ * if(condition_is_give_here){
+ * // if the condition is met
+ * // the code will get executed.
+ * }
+ */
+
+/**
+ * Now lets understand this with the help of example
+ * 
+ */
+
+const num = 5;
+if (num > 0) {
+    console.log("The number is positive.", num)
+}
+
+/*
+Output:
+The number is positive.
+*/
+
+/**
+ * Approch 2: Using If Else Statement
+ * The if else statement will perform some action for a specific 
+ * condition. if the condition meets then a particular code of action will be executed 
+ * othewise it will executed another code of action that satisfies that partcular condition
+ * 
+ */
+
+/**
+ * Syntx
+ * if(condition1){
+ * 
+ * executes when condition1 is true
+ * 
+ * if(con2){
+ * executes when con2 is true
+ * }
+ * }
+ */
+
+/**
+ * Now lets understand this with the help of example
+ * let num = -10
+ * if(num>0)
+ * console.log("The number is positive")
+ * else
+ * console.log("The number is negative")
+ */
+
+let numm = -10
+if (numm > 0) {
+    console.log("The number is positive")
+}
+else {
+    console.log("The number is negative")
+}
+
+console.log("Approch 3 Using Switch Statement")
+/**
+ * the switch case statement is js is also used for decision making purpose.
+ * in some case, using the switch case statement is seen to be more convenient than
+ * if else statements
+ */
+
+
+// Syntx
+// switch (exp) {
+//     case v1:
+//         statement
+//         break;
+//     case v2:
+//         statement
+//         break;
+//     default:
+//         statemenentDefault;
+// }
+
+let num3 = 5;
+
+switch (num3) {
+    case 0:
+        console.log("Number is zero.");
+        break;
+    case 1:
+        console.log("Nuber is one.");
+        break;
+    case 2:
+        console.log("Number is two.");
+        break;
+    default:
+        console.log("Number is greater than 2.");
+};
+
+
+console.log("Approch 4 Using the Ternary Operator")
+/**Conditional Operator */
+/**
+ * The conditional operator, also referred to as the ternary
+ * operator, is a shortcut for experssing conditional statement in js
+ */
+
+// Syntax
+// con ? v if true : v if false
+
+
+// Now let's understand this with the help of example 
+
+let numF = 10
+
+let resultF = numF >= 0 ? "Positive" : "Negative"
+
+console.log(`The number is ${resultF}`)
+
+
+console.log("Approach 5 : Using Foor Loop")
+
+/**
+ * in this approch, we are using for loop in which the execution of a set of instructions ,
+ * repeadtedly until some condition evalautes and becomes false 
+ * 
+ * syntax
+ * 
+ * for(st 1: st2: st3){
+ * code here}
+ */
+
+// Now lets understnad this wth the help of example s
+for (let i = 0; i <= 10; i++) {
+    if (i % 2 === 0) {
+        console.log(i)
+    }
+}
+
+
+console.log("Approch 6: Using While loop")
+
+// The while loop repeats a block of code as long as a specified  contion is true
+
+// Syntx
+// while (con){
+//     // code block
+// }
+
+
+// Now lets understand this with thelp if example 
+
+let kk = 1
+
+while (kk <= 5) {
+    console.log(kk)
+    kk++
+}
+
+console.log("Approch 7: Using Do while loop")
+
+// The do while loop is simmliar to the wile loop,
+//     expcet tthat the condition is evaluted after the exection of the loop's
+// body,
+//     this means the code block will executed at least one, even if the condition is false
+
+
+// Syntax
+// do {
+//     // code block
+// } while (con)
+
+
+
+// now let's understand this with the help of example 
+
+let i = 1;
+
+do {
+    console.log(i)
+    i++
+} while (i < 5)
+
+/**
+ * Conclusion
+ * This article now includes example for if statement, if else
+ * statement,switch statement, ternary operator, for loop, while loop,
+ * and do while loop, providing a comprehensive guide to control statements
+ * in js , these contrl structures help manage the flow of a program based on various 
+ *conditions and are fundamental to mastering js 
+ */
