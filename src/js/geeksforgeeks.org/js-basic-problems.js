@@ -215,8 +215,44 @@
 
 // countdown(10)
 
+console.log("*************************")
+console.log("Seconds Largeset Number");
+
+/**
+ * Given an array of positive intergers arr[]
+ * of side n, the task is to find second largest distinct
+ * element in the array
+ * 
+ * 
+ * input arr[] = [12 35 1 10 34 1]
+ * 
+ * output:34
+ * Explanation: The largest element of the array 
+ * is 35 and the second element is 34
+ */
 
 
+function getSecondLarg(arr) {
+    let n = arr.length;
+    console.log("Length:", n)
+    let sortArray = arr.sort((a, b) => a - b)
+    console.log("SortedArray", sortArray)
 
+    for (let i = n - 2; i > 0; i--) {
+        console.log(i)
+        console.log(arr[i])
+        console.log(arr[i], arr[n - 1])
+        if (arr[i] !== arr[n - 1]) {
+            return arr[i]
+        }
+
+    }
+}
+
+
+let arr = [10, 10, 90, 30, 10, 80]
+console.log("Orginal Array:", arr)
+let secondLarg = getSecondLarg(arr);
+console.log("Second Largest Number:", secondLarg)
 
 
