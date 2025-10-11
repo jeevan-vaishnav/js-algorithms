@@ -222,37 +222,133 @@ console.log("Seconds Largeset Number");
  * Given an array of positive intergers arr[]
  * of side n, the task is to find second largest distinct
  * element in the array
- * 
- * 
+ *
+ *
  * input arr[] = [12 35 1 10 34 1]
- * 
+ *
  * output:34
- * Explanation: The largest element of the array 
+ * Explanation: The largest element of the array
  * is 35 and the second element is 34
  */
 
 
-function getSecondLarg(arr) {
-    let n = arr.length;
-    console.log("Length:", n)
-    let sortArray = arr.sort((a, b) => a - b)
-    console.log("SortedArray", sortArray)
+// function getSecondLarg(arr) {
+//     let n = arr.length;
+//     console.log("Length:", n)
+//     let sortArray = arr.sort((a, b) => a - b)
+//     console.log("SortedArray", sortArray)
 
-    for (let i = n - 2; i > 0; i--) {
-        console.log(i)
-        console.log(arr[i])
-        console.log(arr[i], arr[n - 1])
-        if (arr[i] !== arr[n - 1]) {
-            return arr[i]
+//     for (let i = n - 2; i > 0; i--) {
+//         console.log(i)
+//         console.log(arr[i])
+//         console.log(arr[i], arr[n - 1])
+//         if (arr[i] !== arr[n - 1]) {
+//             return arr[i]
+//         }
+
+//     }
+// }
+
+
+// let arr = [10, 10, 90, 30, 10, 80]
+// console.log("Orginal Array:", arr)
+// let secondLarg = getSecondLarg(arr);
+// console.log("Second Largest Number:", secondLarg)
+
+
+console.log("Seconds Largest Number")
+console.log("*********************")
+/**
+ * Better Approch Two Pass Search
+ * The approch is to traverse the array twise.
+ * in the first traversal , find the maxiumn element
+ * in the second traversa, find the maximum elmeent ignoring the one
+ * we found in the first traversal.
+ */
+
+
+/**
+ * Working
+ *  0  1  2 3  4  5
+ * [12,35,1,10,34,1]
+ * largest:35
+ * second largest = -1
+ * 
+ * Traverse the array and find the largest element 
+ * in the array initialize second largest with -1
+ * 
+ * 02: Since arr[0] > secondLargest, that is the 12 >-1
+ * update second largest to 
+ * 12
+ * 
+ * largest = 35
+ * second largest = 12
+ * 
+ * 03| Since arr[1] > secon arlgest but arr[1] = largest,
+ * no updates are required.
+ * 
+ * 04 since ,arr[2] <= secondlargest, that is 1<=12
+ * no update are require.
+ * 
+ * largest = 35
+ * second largest 12
+ * 
+ * 05| Since, arr[3]<= secondlargest, that is 10 <=12,
+ * no updates are required.
+ * largest = 35
+ * secondLargest = 12
+ * 
+ * 
+ * 06 since arr[4] > secondLargest, that is 34 > 12
+ * uupdate second largset to 34
+ * larget = 35
+ * second largset 34
+ * 
+ * 07 seince, arr[5] <= secondLargest, that is 1 <= 34,
+ * no update are requried 
+ * largest  = 35
+ * second largest = 34
+ */
+
+console.log("Better Approch")
+
+/**
+ * element in the array
+ * using two traverls
+ */
+function getSecondLargest(arr) {
+
+    let n = arr.length
+
+    let largest = -1
+    let secondLargest = -1;
+
+    // finding the largest element
+    for (let i = 0; i < n; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i]
         }
-
     }
+    console.log(largest)
+
+    // find the second largest elemetn 
+    for (let i = 0; i < n; i++) {
+        // update second larget if teh curent element is 
+        // greater
+
+        // than second largest and not equa to the last 
+
+        if (arr[i] > secondLargest
+            && arr[i] !== largest
+        ) {
+            secondLargest = arr[i]
+        }
+    }
+
+    return secondLargest
 }
 
-
-let arr = [10, 10, 90, 30, 10, 80]
-console.log("Orginal Array:", arr)
-let secondLarg = getSecondLarg(arr);
-console.log("Second Largest Number:", secondLarg)
+let myarr = [12, 35, 1, 10, 34, 1]
+console.log(getSecondLargest(myarr))
 
 
