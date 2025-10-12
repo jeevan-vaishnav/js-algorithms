@@ -378,3 +378,82 @@ console.log("Better Approch")
 // console.log(sArray)
 // console.log(getSecondLargest(sArray))
 
+console.log("remove duplicate from sorted")
+
+
+/**
+ * Remove duplicates from sorted array
+ * 
+ * given a sorted array arr[] of size n, the goal is to rearrange
+ * the array so that all distinct element apear at the begnining in
+ * sorted order. additionally , return the lft of this distnict sorted subarrya
+ * 
+ * 
+ * Note: the elements after the distnct onces can be in any order and hold
+ * any value, as they dont't affect the result
+ * 
+ * 
+ * example we have
+ * input 2 2 2 2 2
+ * output 2
+ * all the elements are 2, so only keep one instnace of 2 
+ *
+ * 
+ * input 1 2 2 3 4 4 4 5 5
+ * output 1 2 3 4 5
+ * 
+ * input 1 2 3
+ * output 1 2 3
+ * no changes as all elements are distinct.
+ */
+
+
+/**
+ * Using hash set , works for unsorted also o(n) time and O(n) space
+ * 
+ * use a hash set or dictionary to store elements already processed
+ * initialize index of result array as 0
+ * traverse through the input array, if an element is not in the hash set,
+ * put it at the result index and insert into the set
+ */
+
+
+function removeDuplicates(arr) {
+    // to track seen elements
+    const s = new Set()
+    console.log(s)
+
+    // to maintian the new size of the array s
+    let idx = 0
+
+    for (let i = 0; i < arr.length; i++) {
+        console.log("value:", arr[i])
+        // console.log(!s.has(arr[i]))
+        if (!s.has(arr[i])) {
+            // console.log(arr[i])
+            s.add(arr[i])
+            console.log(s)
+            arr[idx++] = arr[i]
+        }
+    }
+
+    // return the size of the array with unique elements
+    return idx
+}
+
+// driver code
+const arr = [1, 2, 2, 3, 4, 4, 4, 5, 5]
+const newSize = removeDuplicates(arr)
+console.log(newSize)
+console.log(arr.slice(0, newSize).join(' '))
+
+
+
+
+
+
+
+
+
+
+
