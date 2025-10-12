@@ -316,39 +316,65 @@ console.log("Better Approch")
  * element in the array
  * using two traverls
  */
-function getSecondLargest(arr) {
+// function getSecondLargest(arr) {
 
-    let n = arr.length
+//     let n = arr.length
 
-    let largest = -1
-    let secondLargest = -1;
+//     let largest = -1
+//     let secondLargest = -1;
 
-    // finding the largest element
-    for (let i = 0; i < n; i++) {
-        if (arr[i] > largest) {
-            largest = arr[i]
-        }
-    }
-    console.log(largest)
+//     // finding the largest element
+//     for (let i = 0; i < n; i++) {
+//         if (arr[i] > largest) {
+//             largest = arr[i]
+//         }
+//     }
+//     console.log(largest)
 
-    // find the second largest elemetn 
-    for (let i = 0; i < n; i++) {
-        // update second larget if teh curent element is 
-        // greater
+//     // find the second largest elemetn
+//     for (let i = 0; i < n; i++) {
+//         // update second larget if teh curent element is
+//         // greater
 
-        // than second largest and not equa to the last 
+//         // than second largest and not equa to the last
 
-        if (arr[i] > secondLargest
-            && arr[i] !== largest
-        ) {
-            secondLargest = arr[i]
-        }
-    }
+//         if (arr[i] > secondLargest
+//             && arr[i] !== largest
+//         ) {
+//             secondLargest = arr[i]
+//         }
+//     }
 
-    return secondLargest
-}
+//     return secondLargest
+// }
 
-let myarr = [12, 35, 1, 10, 34, 1]
-console.log(getSecondLargest(myarr))
+// let myarr = [12, 35, 1, 10, 34, 1]
+// console.log(getSecondLargest(myarr))
 
+// function getSecondLargest(arr) {
+//     const n = arr.length
+//     let largest = -1
+//     let secondLargest = -1
+//     console.log("Start Largest", largest)
+//     console.log("Second Largest ", secondLargest)
+
+//     // find the largest number
+//     for (let i = 0; i < n; i++) {
+//         if (arr[i] > largest) {
+//             largest = arr[i]
+//         }
+//     }
+//     for (let i = 0; i < n; i++) {
+//         if (arr[i] > secondLargest && arr[i] !== largest) {
+//             secondLargest = arr[i]
+//         }
+//     }
+//     return secondLargest
+// }
+
+// console.log("Pratice again,two pass")
+// let sArray = [10, 3, 41, 4, 5, 32, 35]
+// console.log("We have orignal array")
+// console.log(sArray)
+// console.log(getSecondLargest(sArray))
 
