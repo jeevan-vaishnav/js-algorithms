@@ -383,25 +383,25 @@ console.log("remove duplicate from sorted")
 
 /**
  * Remove duplicates from sorted array
- * 
+ *
  * given a sorted array arr[] of size n, the goal is to rearrange
  * the array so that all distinct element apear at the begnining in
  * sorted order. additionally , return the lft of this distnict sorted subarrya
- * 
- * 
+ *
+ *
  * Note: the elements after the distnct onces can be in any order and hold
  * any value, as they dont't affect the result
- * 
- * 
+ *
+ *
  * example we have
  * input 2 2 2 2 2
  * output 2
- * all the elements are 2, so only keep one instnace of 2 
+ * all the elements are 2, so only keep one instnace of 2
  *
- * 
+ *
  * input 1 2 2 3 4 4 4 5 5
  * output 1 2 3 4 5
- * 
+ *
  * input 1 2 3
  * output 1 2 3
  * no changes as all elements are distinct.
@@ -410,7 +410,7 @@ console.log("remove duplicate from sorted")
 
 /**
  * Using hash set , works for unsorted also o(n) time and O(n) space
- * 
+ *
  * use a hash set or dictionary to store elements already processed
  * initialize index of result array as 0
  * traverse through the input array, if an element is not in the hash set,
@@ -418,34 +418,79 @@ console.log("remove duplicate from sorted")
  */
 
 
-function removeDuplicates(arr) {
-    // to track seen elements
-    const s = new Set()
-    console.log(s)
+// function removeDuplicates(arr) {
+//     // to track seen elements
+//     const s = new Set()
+//     console.log(s)
+//     // to maintian the new size of the array s
+//     let idx = 0
 
-    // to maintian the new size of the array s
-    let idx = 0
+//     for (let i = 0; i < arr.length; i++) {
+//         console.log("value:", arr[i])
+//         // console.log(!s.has(arr[i]))
+//         if (!s.has(arr[i])) {
+//             // console.log(arr[i])
+//             s.add(arr[i])
+//             console.log(s)
+//             arr[idx++] = arr[i]
+//         }
+//     }
 
-    for (let i = 0; i < arr.length; i++) {
-        console.log("value:", arr[i])
-        // console.log(!s.has(arr[i]))
-        if (!s.has(arr[i])) {
-            // console.log(arr[i])
-            s.add(arr[i])
-            console.log(s)
-            arr[idx++] = arr[i]
+//     // return the size of the array with unique elements
+//     return idx
+// }
+
+// // driver code
+// const arr = [1, 2, 2, 3, 4, 4, 4, 5, 5]
+// const newSize = removeDuplicates(arr)
+// console.log(newSize)
+// console.log(arr.slice(0, newSize).join(' '))
+
+console.log("Expected Approach")
+/**o(n) time and o(1) space */
+/**
+ * since the array is sortedm we do not need to maintain
+ * a hash set. all occurences of an element would be consectuve, so we mainly 
+ * need to check if the current element is same as the previus element or not
+ * 
+ * 
+ * 
+ * Step by step implementtatin
+ * Start with idx = 
+ * 
+ * 
+ */
+
+console.log("Generating All Sub Arrays")
+/**
+ * Generating all sub arrays
+ * 
+ */
+
+function subArray(myArr) {
+    const myArrLength = myArr.length
+    // console.log("Length:", myArrLength)
+
+    //pick starting point 
+    for (let i = 0; i < myArrLength; i++) {
+        // console.log("Picking starting point:", myArr[i])
+        //pick ending point 
+        for (let j = i; j < myArrLength; j++) {
+            // console.log("Picking ending point", myArr[j])
+            // Print subarray between current starting and ending points
+            let subArray = [];
+            for (let k = i; k <= j; k++) {
+                subArray.push(myArr[k])
+            }
+            console.log(subArray)
         }
     }
-
-    // return the size of the array with unique elements
-    return idx
 }
 
-// driver code
-const arr = [1, 2, 2, 3, 4, 4, 4, 5, 5]
-const newSize = removeDuplicates(arr)
-console.log(newSize)
-console.log(arr.slice(0, newSize).join(' '))
+const meArray = [1, 2, 3, 4]
+console.log("ALL Non-Empty Subarrays:")
+subArray(meArray);
+
 
 
 
