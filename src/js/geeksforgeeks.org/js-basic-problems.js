@@ -526,12 +526,39 @@ console.log("Gene All Arrays with Recursive")
 // var isArray = [1, 2, 3, 4]
 // printSubArray(isArray, 0, 0)
 
+console.log("reverse array")
+/**
+ * Pratice to solve reverse array
+ */
 
+/**Reverse as an array[].
+ * reversing an array means rearranging the elements such that the first element
+ * becomes the last,the second element becomes second last and so on
+ */
 
+/**
+ * Examples 
+ * input arr[] = 1 4 3 2 6 5
+ * output = 5 6 2 3 4 1
+ */
+function revFunction(ar) {
+    /**
+     * we have array we need rearraing the array, 
+     * so this is working like just changing the position on reverse mode 
+     *  */
+    let length = ar.length;
+    let myar = [];
+    // console.log("length of array", length)
+    for (let i = length - 1; i >= 0; i--) {
+        // console.log(ar[i])
+        myar.push(ar[i])
+    }
+    return myar
 
-
-
-
+}
+const constArray = [10, 30, 40, 50, 60]
+console.log("original array:", constArray)
+console.log("reverse array:", revFunction(constArray))
 
 
 
