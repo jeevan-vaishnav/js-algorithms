@@ -562,21 +562,17 @@ console.log("reverse array")
 
 function recMethod(paramArray) {
     const n = paramArray.length;
-
     let temp = new Array()
     for (let i = 0; i < n; i++) {
-        // console.log()
-        // console.log(paramArray[i - n])
         temp[i] = paramArray[n - i - 1]
     }
     for (let i = 0; i < n; i++) {
         paramArray[i] = temp[i];
     }
 }
-
 const orArray = [100, 200, 300, 400, 500]
-console.log("Original Array:", orArray)
+console.log("Before reverse:", orArray)
 recMethod(orArray)
-console.log(orArray)
+console.log("After reverse:", orArray)
 
 
