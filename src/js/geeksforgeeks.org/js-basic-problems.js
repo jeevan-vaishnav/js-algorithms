@@ -560,19 +560,38 @@ console.log("reverse array")
 // console.log("original array:", constArray)
 // console.log("reverse array:", revFunction(constArray))
 
-function recMethod(paramArray) {
-    const n = paramArray.length;
-    let temp = new Array()
-    for (let i = 0; i < n; i++) {
-        temp[i] = paramArray[n - i - 1]
+// function recMethod(paramArray) {
+//     const n = paramArray.length;
+//     let temp = new Array()
+//     for (let i = 0; i < n; i++) {
+//         temp[i] = paramArray[n - i - 1]
+//     }
+//     for (let i = 0; i < n; i++) {
+//         paramArray[i] = temp[i];
+//     }
+// }
+// const orArray = [100, 200, 300, 400, 500]
+// console.log("Before reverse:", orArray)
+// recMethod(orArray)
+// console.log("After reverse:", orArray)
+
+console.log("Reserve method using recursive")
+
+function recursiveMethod(arr) {
+    /**
+     * initilize the left and right
+     */
+    let left = 0, right = arr.length - 1;
+
+    while (left < right) {
+        [arr[left], arr[right]] = [arr[right], arr[left]]
+        left++
+        right--
     }
-    for (let i = 0; i < n; i++) {
-        paramArray[i] = temp[i];
-    }
+
+
 }
-const orArray = [100, 200, 300, 400, 500]
-console.log("Before reverse:", orArray)
-recMethod(orArray)
-console.log("After reverse:", orArray)
 
-
+const arr = [1, 2, 3, 4, 5, 6]
+recursiveMethod(arr)
+console.log(arr.join(" "))
