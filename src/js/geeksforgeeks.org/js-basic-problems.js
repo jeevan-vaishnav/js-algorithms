@@ -464,32 +464,68 @@ console.log("Expected Approach")
 console.log("Generating All Sub Arrays")
 /**
  * Generating all sub arrays
- * 
+ *
  */
 
-function subArray(myArr) {
-    const myArrLength = myArr.length
-    // console.log("Length:", myArrLength)
+// function subArray(myArr) {
+//     const myArrLength = myArr.length
+//     // console.log("Length:", myArrLength)
 
-    //pick starting point 
-    for (let i = 0; i < myArrLength; i++) {
-        // console.log("Picking starting point:", myArr[i])
-        //pick ending point 
-        for (let j = i; j < myArrLength; j++) {
-            // console.log("Picking ending point", myArr[j])
-            // Print subarray between current starting and ending points
-            let subArray = [];
-            for (let k = i; k <= j; k++) {
-                subArray.push(myArr[k])
-            }
-            console.log(subArray)
-        }
-    }
-}
+//     //pick starting point
+//     for (let i = 0; i < myArrLength; i++) {
+//         // console.log("Picking starting point:", myArr[i])
+//         //pick ending point
+//         for (let j = i; j < myArrLength; j++) {
+//             // console.log("Picking ending point", myArr[j])
+//             // Print subarray between current starting and ending points
+//             let subArray = [];
+//             for (let k = i; k <= j; k++) {
+//                 subArray.push(myArr[k])
+//             }
+//             console.log(subArray)
+//         }
+//     }
+// }
 
-const meArray = [1, 2, 3, 4]
-console.log("ALL Non-Empty Subarrays:")
-subArray(meArray);
+// const meArray = [1, 2, 3, 4]
+// console.log("ALL Non-Empty Subarrays:")
+// subArray(meArray);
+console.log("Gene All Arrays with Recursive")
+/**
+ * Generating all sub arrays with recursive
+ *
+ * JS code to print all possible
+ * subarrays for given array using recursive
+ * recursive function to print all
+ * possible subarrays for given array
+*/
+
+// function printSubArray(ar, start, end) {
+//     if (end == ar.length)
+//         // console.log("array length is equal to end")
+//         return;
+//     //increament the end point and start from 0
+//     else if (start > end) {
+//         printSubArray(ar, 0, end + 1)
+//         // console.log(start)
+//         // console.log(end)
+//     }
+//     else {
+//         let subArray = "[";
+//         for (var i = start; i < end; i++) {
+//             subArray += ar[i] + ", ";
+//         }
+//         subArray += ar[end] + "]";
+//         console.log(subArray)
+//         printSubArray(ar, start + 1, end)
+
+//     }
+//     return
+// }
+
+// var isArray = [1, 2, 3, 4]
+// printSubArray(isArray, 0, 0)
+
 
 
 
