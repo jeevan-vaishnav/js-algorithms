@@ -537,31 +537,46 @@ console.log("reverse array")
  */
 
 /**
- * Examples 
+ * Examples
  * input arr[] = 1 4 3 2 6 5
  * output = 5 6 2 3 4 1
  */
-function revFunction(ar) {
-    /**
-     * we have array we need rearraing the array, 
-     * so this is working like just changing the position on reverse mode 
-     *  */
-    let length = ar.length;
-    let myar = [];
-    // console.log("length of array", length)
-    for (let i = length - 1; i >= 0; i--) {
-        // console.log(ar[i])
-        myar.push(ar[i])
+// function revFunction(ar) {
+//     /**
+//      * we have array we need rearraing the array,
+//      * so this is working like just changing the position on reverse mode
+//      *  */
+//     let length = ar.length;
+//     let myar = [];
+//     // console.log("length of array", length)
+//     for (let i = length - 1; i >= 0; i--) {
+//         // console.log(ar[i])
+//         myar.push(ar[i])
+//     }
+//     return myar
+
+// }
+// const constArray = [10, 30, 40, 50, 60]
+// console.log("original array:", constArray)
+// console.log("reverse array:", revFunction(constArray))
+
+function recMethod(paramArray) {
+    const n = paramArray.length;
+
+    let temp = new Array()
+    for (let i = 0; i < n; i++) {
+        // console.log()
+        // console.log(paramArray[i - n])
+        temp[i] = paramArray[n - i - 1]
     }
-    return myar
-
+    for (let i = 0; i < n; i++) {
+        paramArray[i] = temp[i];
+    }
 }
-const constArray = [10, 30, 40, 50, 60]
-console.log("original array:", constArray)
-console.log("reverse array:", revFunction(constArray))
 
-
-
-
+const orArray = [100, 200, 300, 400, 500]
+console.log("Original Array:", orArray)
+recMethod(orArray)
+console.log(orArray)
 
 
