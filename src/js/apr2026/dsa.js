@@ -38,29 +38,47 @@
  * can you improve the performance of the solution?
  * can you think to other way to refector ?
  * How have other peples solve this problem?
- * 
- * 
+ *
+ *
  */
 
-// after refctor the code 
+// after refctor the code
 function charCount(str) {
     let obj = {};
     for (let v of str) {
         v = v.toLowerCase();
-        if (/[a-z0-9]/.test(v)) {
-
-            if (obj[v] > 0) {
-                obj[v]++
-            }
-            else {
-                obj[v] = 1
-            }
+        if (isAlphaNumeric(v)) {
+            // if (obj[v] > 0) {
+            //     obj[v]++
+            // }
+            // else {
+            //     obj[v] = 1
+            // }
+            obj[v] = ++obj[v] || 1
         }
     }
     return obj
 }
 
-console.log(charCount("Hi Jeevan!"))
+console.log(charCount("Hi Jeevan! 1231239879879"))
+
+function isAlphaNumeric(char) {
+    console.log("isAlphaNumeric")
+    var code = char.charCodeAt(0)
+    // 47 to 58 // numeric 0-9 
+    // 64 to 91 is alpha A-Z
+    // 96 to 123 is lower alpha
+    if (
+        !(code > 47 && code < 58) &&
+        !(code > 64 && code < 91) &&
+        !(code > 96 && code < 123)
+    ) {
+        console.log(code)
+        return false
+    } else {
+        return true
+    }
+}
 
 
 
