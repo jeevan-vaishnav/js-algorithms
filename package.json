@@ -6,7 +6,8 @@
     "js": "nodemon src/js/geeksforgeeks.org/js.js",
     "js-array-string": "nodemon src/js/geeksforgeeks.org/js-array-string.js",
     "js-basic-problems": "nodemon src/js/geeksforgeeks.org/js-basic-problems.js",
-    "apr2026": "nodemon src/js/apr2026/dsa.js"
+    "apr2026": "nodemon src/js/apr2026/dsa.js",
+    "apr22026": "nodemon src/js/apr2026/problem_solving-patterns.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
