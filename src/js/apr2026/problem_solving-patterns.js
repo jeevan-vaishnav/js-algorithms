@@ -103,7 +103,7 @@ console.log("Refector code")
 /**
  * problem:write a function called same, which accept 2 array,its return the value the every array
  * crossponding the square of second array.the frquency of value will be same
- * 
+ *
  * input
  * a = 1 5 6 4
  * b = 1 4
@@ -114,45 +114,103 @@ console.log("Refector code")
  * a = 4 6 9
  * b = 16 36 91
  * output: true
- * 
+ *
  */
 
 
-function same(a1, a2) {
-    console.log("array one:", a1)
-    console.log("array two:", a2)
-    if (a1.length !== a2.length) {
-        return false
-    }
+// function same(a1, a2) {
+//     console.log("array one:", a1)
+//     console.log("array two:", a2)
+//     if (a1.length !== a2.length) {
+//         return false
+//     }
 
-    let aTemp = {}
-    for (let at of a1) {
-        aTemp[at] = aTemp[at] ? ++aTemp[at] : 1
-    }
-    let bTemp = {}
-    for (let at of a2) {
-        bTemp[at] = bTemp[at] ? ++bTemp[at] : 1
-    }
-    console.log(aTemp)
-    console.log(bTemp)
+//     let aTemp = {}
+//     for (let at of a1) {
+//         aTemp[at] = aTemp[at] ? ++aTemp[at] : 1
+//     }
+//     let bTemp = {}
+//     for (let at of a2) {
+//         bTemp[at] = bTemp[at] ? ++bTemp[at] : 1
+//     }
+//     console.log(aTemp)
+//     console.log(bTemp)
 
-    for (let key in aTemp) {
+//     for (let key in aTemp) {
 
-        if (!(key ** 2 in bTemp)) {
+//         if (!(key ** 2 in bTemp)) {
+//             return false
+//         }
+//         if (bTemp[key ** 2] !== aTemp[key]) {
+//             return false
+//         }
+//     }
+
+//     return true
+// }
+
+// let array1 = [4, 6, 6, 5, 5, 5]
+// let array2 = [16, 25, 36, 36, 25, 25]
+// const returnOutput = same(array1, array2)
+// console.log(returnOutput);
+
+// similar program 
+console.log("Anagaram");
+/**
+ * Logic statement
+ * Anagram mean user define input variable and both character are match to each other
+ * for example : car -> rat = false
+ * car -> rac = true 
+ * jeevan -> vaneej = true
+ * and both array length should be equal
+ */
+
+
+function makeAnagaram(a, b) {
+    console.log("Calling function:")
+    if (a.length != b.length) return false
+
+    let ObjA = {}
+    let ObjB = {}
+
+    for (v of a) {
+        ObjA[v] = ObjA[v] ? ObjA[v] + 1 : 1
+    }
+    for (v of b) {
+        ObjB[v] = ObjB[v] ? ObjB[v] + 1 : 1
+    }
+    for (key in ObjA) {
+        if (ObjA[key] !== ObjB[key]) {
             return false
         }
-        if (bTemp[key ** 2] !== aTemp[key]) {
-            return false
-        }
     }
+
 
     return true
 }
 
-let array1 = [4, 6, 6, 5, 5, 5]
-let array2 = [16, 25, 36, 36, 25, 25]
-const returnOutput = same(array1, array2)
-console.log(returnOutput);
+
+const inputA = "mma";
+const inputB = "mam";
+
+const result = makeAnagaram(inputA, inputB);
+console.log("Result is: ", result)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
