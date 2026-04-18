@@ -160,44 +160,73 @@ console.log("Anagaram");
  * Logic statement
  * Anagram mean user define input variable and both character are match to each other
  * for example : car -> rat = false
- * car -> rac = true 
+ * car -> rac = true
  * jeevan -> vaneej = true
  * and both array length should be equal
  */
 
 
-function makeAnagaram(a, b) {
-    console.log("Calling function:")
-    if (a.length != b.length) return false
+// function makeAnagaram(a, b) {
+//     console.log("Calling function:")
+//     if (a.length != b.length) return false
 
-    let ObjA = {}
-    let ObjB = {}
+//     let ObjA = {}
+//     let ObjB = {}
 
-    for (v of a) {
-        ObjA[v] = ObjA[v] ? ObjA[v] + 1 : 1
+//     for (v of a) {
+//         ObjA[v] = ObjA[v] ? ObjA[v] + 1 : 1
+//     }
+//     for (v of b) {
+//         ObjB[v] = ObjB[v] ? ObjB[v] + 1 : 1
+//     }
+//     for (key in ObjA) {
+//         if (ObjA[key] !== ObjB[key]) {
+//             return false
+//         }
+//     }
+
+
+//     return true
+// }
+
+
+// const inputA = "mma";
+// const inputB = "mam";
+
+// const result = makeAnagaram(inputA, inputB);
+// console.log("Result is: ", result)
+
+
+console.log("New Logic")
+
+function checkAnagram(first, second) {
+    if (first.length !== second.length) return false
+
+    let lookup = {}
+    for (let i = 0; i < first.length; i++) {
+        lookup[first[i]] = lookup[first[i]] ? lookup[first[i]] += 1 : 1
     }
-    for (v of b) {
-        ObjB[v] = ObjB[v] ? ObjB[v] + 1 : 1
-    }
-    for (key in ObjA) {
-        if (ObjA[key] !== ObjB[key]) {
+    console.log(lookup)
+
+    for (let i = 0; i < second.length; i++) {
+        let second_value = second[i]
+        if (!lookup[second_value]) {
             return false
+        } else {
+            lookup[second_value] -= 1
+            console.log(second_value, "", lookup)
         }
-    }
 
+
+    }
 
     return true
 }
 
-
-const inputA = "mma";
-const inputB = "mam";
-
-const result = makeAnagaram(inputA, inputB);
-console.log("Result is: ", result)
-
-
-
+const vr = "eme"
+const yr = "mee"
+const result = checkAnagram(vr, yr)
+console.log(result)
 
 
 
