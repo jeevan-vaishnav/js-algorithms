@@ -9,7 +9,8 @@
     "apr2026": "nodemon src/js/apr2026/dsa.js",
     "apr22026": "nodemon src/js/apr2026/problem_solving-patterns.js",
     "apr32026": "nodemon src/js/apr2026/multipointers.js",
-    "apr42026": "nodemon src/js/apr2026/slidingwindows.js"
+    "apr42026": "nodemon src/js/apr2026/slidingwindows.js",
+    "may12026": "nodemon src/js/may2026/recursive.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
