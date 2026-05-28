@@ -11,11 +11,14 @@
     "apr32026": "nodemon src/js/apr2026/multipointers.js",
     "apr42026": "nodemon src/js/apr2026/slidingwindows.js",
     "may12026": "nodemon src/js/may2026/recursive.js",
-    "knowcheck": "nodemon src/js/knowcheck/index.js"
-
+    "knowcheck": "nodemon src/js/knowcheck/index.js",
+    "timer": "nodemon src/js/timer/index.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
     "vite": "^5.4.2"
+  },
+  "dependencies": {
+    "jsdom": "^29.1.1"
   }
 }
