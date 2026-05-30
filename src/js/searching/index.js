@@ -95,6 +95,22 @@ function customFind(users,callback){
     return undefined
 }
 
-const resultCustomer = customFind(users, user => user.id === 2);
+const resultCustom = customFind(users, user => user.id === 2);
 
-console.log("Result Custom:", resultCustomer)
+console.log("Result Custom:", resultCustom)
+
+
+function customFindIndex(users,callback){
+    for(let i = 0; i < users.length; i++){
+        if(callback(users[i])){
+            return i
+        }
+    }
+    return undefined
+}
+
+const resultFindIndexCustom = customFindIndex(users, user => user.id === 2);
+
+console.log("Result Find Index Custom:", resultFindIndexCustom)
+
+
