@@ -46,7 +46,6 @@ let target  = "Asus"
 const indexOfResult = indexOfFun(justArray,target)
 console.log("Index Of Result:", indexOfResult)
 /**Linear Time: how includes work */
-
 function includesOfFun(arr,target){
     console.log(arr)
     console.log("Method Includes:Target is", target)
@@ -61,3 +60,41 @@ function includesOfFun(arr,target){
 let justAnotherArray = ["Yes","No","Great","Wow"]
 const includeResult = includesOfFun(justAnotherArray,"Wow")
 console.log("Include Of Result:", includeResult)
+
+console.log("How Find Works")
+/**
+ * Now things become intreseting 
+ * suppose we have conse users = [
+ * {id:1,name:"jeevan"}
+ * {id:2,name:"Wil"}
+ * {id:3,name:"Sam"}
+ * ]
+ * 
+ */
+
+// creating test users 
+const users = [
+    {id:1,name:"jeevan"},
+    {id:2,name:"Wilson"},
+    {id:3,name:"Mac"},
+]
+
+const result = users.find(v =>  v.id === 2)
+console.log("Find:", result)
+
+/**
+ * Now my focus how find method is working befind the js engine 
+ */
+
+function customFind(users,callback){
+    for(let i = 0; i < users.length; i++){
+        if(callback(users[i])){
+            return users[i]
+        }
+    }
+    return undefined
+}
+
+const resultCustomer = customFind(users, user => user.id === 2);
+
+console.log("Result Custom:", resultCustomer)
