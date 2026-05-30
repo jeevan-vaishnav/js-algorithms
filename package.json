@@ -12,7 +12,8 @@
     "apr42026": "nodemon src/js/apr2026/slidingwindows.js",
     "may12026": "nodemon src/js/may2026/recursive.js",
     "knowcheck": "nodemon src/js/knowcheck/index.js",
-    "timer": "nodemon src/js/timer/index.js"
+    "timer": "nodemon src/js/timer/index.js",
+    "searching":"nodemon src/js/searching/index.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
